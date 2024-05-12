@@ -1,0 +1,17 @@
+version: '3.1'
+
+volumes:
+  example-event-sourcing_pg_db:
+
+services:
+  example-event-sourcing_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=example
+    volumes:
+      - example-event-sourcing_pg_db:/var/lib/postgresql/data
+    ports:
+      - ${POSTGRES_PORT:-5434}:5432

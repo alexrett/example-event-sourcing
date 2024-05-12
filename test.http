@@ -1,0 +1,36 @@
+### GET request to example server to featch all users
+GET http://localhost:7755/users
+
+###
+
+### POST request to example server to create a new event
+POST http://localhost:7755/users
+Content-Type: application/json
+
+{
+  "id": "000000aa-1111-2222-3333-000000000001",
+  "aggregate_id": "100000bb-1111-2222-3333-000000000001",
+  "type_id": 1000,
+  "payload": {
+    "id": "100000bb-1111-2222-3333-000000000001",
+    "username": "test",
+    "email": "test@test.test"
+  }
+}
+
+###
+
+### POST request to example server to update the password a new event
+POST http://localhost:7755/users
+Content-Type: application/json
+
+{
+  "id": "000000aa-1111-2222-3333-000000000002",
+  "aggregate_id": "100000bb-1111-2222-3333-000000000001",
+  "type_id": 1001,
+  "payload": {
+    "password": "test_password"
+  }
+}
+
+###
